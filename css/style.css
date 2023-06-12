@@ -1,0 +1,14 @@
+@import "components/switch.css";
+@import "sections/header.css";
+
+*{
+  background-color: whitesmoke;
+}
+
+ul{
+  list-style: none;
+  display: inline-flex;
+}
+a{
+  text-decoration: none;
+}
