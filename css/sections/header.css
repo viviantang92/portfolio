@@ -2,8 +2,9 @@ header{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border: 1px solid 
 }
 
 .nav-link{
-  margin: 0 1rem;
+  margin: 0 0.5rem;
 }
