@@ -2,13 +2,18 @@
 @import "sections/header.css";
 
 :root{
+  --bg-color: whitesmoke;
   --font-color: black;
+}
+[data-theme="dark"]{
+  --bg-color: black;
+  --font-color: whitesmoke;
 }
 
 *{
   margin: 0;
   padding: 0;
-  background-color: whitesmoke;
+  background-color: var(--bg-color);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: var(--font-color);
 }
@@ -37,7 +42,7 @@ a:after {
   height: 2px;
   left: 50%;
   position: absolute;
-  background: black;
+  background: var(--font-color);
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   width: 0;
 }
