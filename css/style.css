@@ -1,40 +1,46 @@
-@import "components/switch.css";
-@import "sections/header.css";
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500;1,600&display=swap');
 
-:root{
+@import "components/switch.css";
+@import "components/button.css";
+@import "sections/header.css";
+@import "sections/main.css";
+
+:root {
   --bg-color: whitesmoke;
   --font-color: black;
-}
-[data-theme="dark"]{
-  --bg-color: black;
-  --font-color: whitesmoke;
+  --primary-color: #deb992;
+  --bg-section: var(--primary-color)
+
 }
 
-*{
+[data-theme="dark"] {
+  --bg-color: #212121;
+  --font-color: whitesmoke;
+  --primary-color: #deb992;
+  --bg-section: #deb99282;
+}
+
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   background-color: var(--bg-color);
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: var(--font-color);
+  font-family: 'Nunito Sans', sans-serif;
+    color: var(--font-color);
+    scroll-behavior: smooth;
 }
-
-
-ul { 
-  list-style: none; 
-  display: inline-flex;
-  text-align: center;
+li{
+  list-style: none;
 }
-
 a {
   text-transform: uppercase;
   text-decoration: none;
-  letter-spacing: 0.15em;
-  
+
   display: inline-block;
   padding: 15px 20px;
   position: relative;
 }
-a:after {    
+a:after {
   background: none repeat scroll 0 0 transparent;
   bottom: 0;
   content: "";
@@ -42,11 +48,38 @@ a:after {
   height: 2px;
   left: 50%;
   position: absolute;
-  background: var(--font-color);
+  background: var(--primary-color);
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   width: 0;
 }
-a:hover:after { 
-  width: 100%; 
-  left: 0; 
+a:hover:after{
+  width: 100%;
+  left: 0;
 }
+
+a:hover, .active{
+  color: var(--primary-color);
+  text-shadow: 0.1px 0.1px orange;
+}
+.active:after{
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 0;
+  position: absolute;
+  background: var(--primary-color);
+  width: 100%;
+}
+
+section{
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section:nth-child(odd){
+  background: var(--bg-section);
+}
+
