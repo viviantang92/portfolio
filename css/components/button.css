@@ -1,0 +1,14 @@
+@import '../style.css';
+
+button{
+  cursor: pointer;
+  border: 2px solid var(--primary-color);
+  border-radius: 5px;
+  padding: 0.4em 1em;
+  background-color: var(--primary-color);
+  transition: 0.5s linear;
+}
+
+button:hover{
+  background-color: transparent;
+}
