@@ -7,8 +7,27 @@ button{
   padding: 0.4em 1em;
   background-color: var(--primary-color);
   transition: 0.5s linear;
+
+  animation: fromRight;
+  animation-duration: 5s;
+  animation-delay: 0s;
 }
 
 button:hover{
   background-color: transparent;
+}
+
+
+  
+
+
+@keyframes fromRight {
+  0% {
+      transform: translateX(100px);
+      opacity: 0;
+  }
+  100% {
+      transform: translateX(0);
+      opacity: 1;
+  }
 }

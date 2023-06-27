@@ -6,3 +6,24 @@
   padding-top: 1rem;
 }
 
+.home-section > h1{
+  animation: fromLeft ease;
+  animation-duration: 5s;
+  animation-delay: 0s;
+}
+.home-section > h2{
+  animation: fromLeft ease;
+  animation-duration: 5s;
+  animation-delay: 0s;
+}
+
+@keyframes fromLeft {
+  0% {
+      transform: translateX(-100px);
+      opacity: 0;
+  }
+  100% {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
