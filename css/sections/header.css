@@ -1,33 +1,33 @@
-@import '../style.css';
+@import "../style.css";
 
 /* Header */
-header{
+header {
   position: fixed;
   top: 0;
   width: 100%;
   padding: 1rem;
-  box-shadow: 0px 2px 10px var(--primary-color);
+  box-shadow: 0px 2px 10px var(--accent-color);
 }
 
 /* Navbar */
-.navbar{
+.navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.navbar .links{
+.navbar .links {
   display: flex;
   gap: 2rem;
 }
 
-.navbar .toggle_btn{
+.navbar .toggle_btn {
   display: none;
   cursor: pointer;
 }
 
 /* Logo */
-.logo{
+.logo {
   text-transform: uppercase;
 }
 
@@ -45,64 +45,69 @@ header{
   transform: rotate(0);
   transition: all 200ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
 }
+.toggle_btn.clicked span {
+  background-color: var(--accent-color);
+}
 
-.clicked .one {
+.toggle_btn.clicked .one {
   transform: translateY(5px) rotate(45deg);
 }
 
-.clicked .two {
+.toggle_btn.clicked .two {
   opacity: 0;
 }
 
-.clicked .three {
+.toggle_btn.clicked .three {
   transform: translateY(-10px) rotate(-45deg);
 }
 
-
 /* DropDown Menu (Mobile) */
-.dropdown_menu{
+.dropdown_menu {
   display: none;
   position: absolute;
   top: 60px;
+  left: 0;
   height: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.1);
+  background: var(--bg-opacity-color);
   backdrop-filter: blur(2px);
   overflow: hidden;
   transition: height 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.dropdown_menu.open{
+.dropdown_menu.open {
   height: 100vh;
 }
 
-.dropdown_menu li{
-  /* padding: 0.7rem; */
+.dropdown_menu li {
+  padding: 0.7rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: rgba(0, 0, 0, 0);
+}
+.dropdown_menu li a {
+  background: rgba(0, 0, 0, 0);
 }
 
-
-
 /* Media Query */
-@media(max-width: 820px){
-  .navbar .links{
+@media (max-width: 820px) {
+  .navbar .links {
     display: none;
   }
-  .navbar .toggle_btn{
+  .navbar .toggle_btn {
     display: block;
   }
-  .dropdown_menu{
+  .dropdown_menu {
     display: block;
   }
-  .navbar .logo{
+  .navbar .logo {
     order: 2;
   }
-  .navbar .theme-switch{
+  .navbar .theme-switch {
     order: 1;
   }
-  .navbar .toggle_btn{
-    order:3;
+  .navbar .toggle_btn {
+    order: 3;
   }
 }
