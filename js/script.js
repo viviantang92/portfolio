@@ -9,10 +9,10 @@ function toggleClasses() {
   dropDownMenu.classList.toggle("open");
 }
 
-toggleBtn.onclick = toggleClasses;
+toggleBtn.addEventListener("click", toggleClasses);
 
 dropDownMenuItems.forEach((item) => {
-  item.addEventListener("click", () => toggleClasses());
+  item.addEventListener("click", toggleClasses);
 });
 
 /* Theme switch dark/light */
@@ -21,17 +21,14 @@ const toggleSwitch = document.querySelector(
 );
 function switchTheme(e) {
   // Toggle function theme switch dark/light
-  if (e.target.checked) {
-    document.documentElement.setAttribute("data-theme", "dark");
-  } else {
-    document.documentElement.setAttribute("data-theme", "light");
-  }
+  const theme = e.target.checked ? "dark" : "light";
+  document.documentElement.setAttribute("data-theme", theme);
 }
 toggleSwitch.addEventListener("change", switchTheme);
 
 /* Jump to active page on scroll */
 const sections = document.querySelectorAll("section");
-const navLi = document.querySelectorAll(".navbar ul li a");
+const navLinks = document.querySelectorAll(".navbar ul li a");
 window.addEventListener("scroll", () => {
   let current = "";
   sections.forEach((section) => {
@@ -40,14 +37,14 @@ window.addEventListener("scroll", () => {
       current = section.getAttribute("id");
     }
   });
-  navLi.forEach((i) => {
+  navLinks.forEach((i) => {
     i.classList.remove("active");
     document
       .querySelector(".navbar ul li a[href*= " + current + "]")
       .classList.add("active");
   });
 });
-const nav = document.querySelectorAll(".dropdown_menu li a");
+const nav = document.querySelectorAll(".dropdown_menu ul li a");
 window.addEventListener("scroll", () => {
   let current = "";
   sections.forEach((section) => {
@@ -64,3 +61,5 @@ window.addEventListener("scroll", () => {
       .classList.add("active");
   });
 });
+
+
