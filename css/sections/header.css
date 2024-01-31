@@ -6,7 +6,7 @@ header {
   top: 0;
   width: 100%;
   padding: 1rem;
-  box-shadow: 0px 2px 10px var(--accent-color);
+  box-shadow: 0px 2px 10px var(--shadow-color);
 }
 
 /* Navbar */
@@ -69,8 +69,8 @@ header {
   left: 0;
   height: 0;
   width: 100%;
-  background: var(--bg-opacity-color);
-  backdrop-filter: blur(2px);
+  background: rgba(var(--bg-primary-color), var(--alpha));
+  backdrop-filter: blur(20px);
   overflow: hidden;
   transition: height 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
@@ -79,14 +79,14 @@ header {
   height: 100vh;
 }
 
-.dropdown_menu li {
+.dropdown_menu ul li {
   padding: 0.7rem;
   display: flex;
   align-items: center;
   justify-content: center;
   background: rgba(0, 0, 0, 0);
 }
-.dropdown_menu li a {
+.dropdown_menu ul li a {
   background: rgba(0, 0, 0, 0);
 }
 
