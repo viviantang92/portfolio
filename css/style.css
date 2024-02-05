@@ -1,6 +1,7 @@
 /*=============== GOOGLE FONTS ===============*/
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500;1,600&display=swap");
 
+/*=============== IMPORTED STYLESHEETS ===============*/
 @import "components/switch.css";
 @import "components/button.css";
 @import "sections/header.css";
@@ -14,8 +15,9 @@
   --font-color: black;
   --shadow-color: rgb(0, 0, 0);
   --accent-color: rgb(204, 171, 228);
+  --accent-color2: whitesmoke;
   --alpha: 0.5;
-  --urlImage: url('../bg-light.jpg');
+  --urlImage: url("../bg-light.jpg");
 }
 
 /*=============== VARIABLES DARK THEME ===============*/
@@ -25,9 +27,9 @@
   --font-color: whitesmoke;
   --shadow-color: rgb(0, 0, 0);
   --accent-color: rgb(204, 171, 228);
+  --accent-color2: whitesmoke;
   --alpha: 0.5;
-  --urlImage: url('../bg-dark.jpg');
-
+  --urlImage: url("../bg-dark.jpg");
 }
 
 /*=============== BASE ===============*/
@@ -43,10 +45,11 @@
 h1,
 h2,
 p,
-span,
-a {
+span , a{
   background-color: transparent;
 }
+
+/*=============== LINK STYLES ===============*/
 li {
   list-style: none;
   text-shadow: rgba(0, 0, 0, 0.19) 0px 0px 0.5px,
@@ -106,6 +109,12 @@ section {
 section:nth-child(even) {
   background: var(--urlImage) no-repeat;
   background-size: cover;
+  transition: opacity 1s ease-out;
+}
+section:nth-child(even)::after {
+  display: none;
+  content: var(--urlImage);
+  transition: opacity 1s ease-out;
 }
 
 section:nth-child(odd) {
@@ -113,12 +122,14 @@ section:nth-child(odd) {
 }
 
 span {
-  color: var(--accent-color);
-  text-shadow: rgba(0, 0, 0, 0.19) 0px 0px 0.5px,
-    rgba(0, 0, 0, 0.23) 0px 1px 1px;
+  background: linear-gradient(45deg, var(--accent-color), var(--accent-color2)); /* Adjust the colors as needed */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+ 
 }
 
-footer{
+footer {
   display: flex;
   justify-content: center;
   align-items: center;

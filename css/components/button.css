@@ -2,12 +2,13 @@
 
 button {
   cursor: pointer;
-  border: 2px solid var(--accent-color);
-  border-radius: 5px;
-  padding: 0.4em 1em;
-  background-color: var(--accent-color);
+  border-radius: 1rem;
+  border: 0;
+  padding: 1rem;
+  background: linear-gradient(45deg, var(--accent-color), var(--font-color));
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   transition: 0.5s linear;
+  font-size: 18px;
 
   animation: fromRight;
   animation-duration: 5s;
@@ -15,7 +16,7 @@ button {
 }
 
 button:hover {
-  background-color: transparent;
+  background: linear-gradient(45deg, transparent, transparent);
 }
 
 @keyframes fromRight {
