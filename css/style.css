@@ -7,26 +7,31 @@
 @import "sections/header.css";
 @import "sections/main.css";
 @import "sections/home.css";
+@import "sections/footer.css";
 
 /*=============== VARIABLES CSS ===============*/
 :root {
-  --bg-primary-color: rgb(245, 245, 245);
+  --bg-primary-color: #f5f5f5;
   --bg-accent-color: var(--accent-color);
-  --font-color: black;
+  --font-primary-color: #2b2621;
+  --font-secondary-color: whitesmoke;
+  --icon-color: whitesmoke;
   --shadow-color: rgb(0, 0, 0);
-  --accent-color: rgb(204, 171, 228);
-  --accent-color2: whitesmoke;
+  --accent-color: #7eabae;
+  --accent-color2: #0d0d0d;
   --alpha: 0.5;
   --urlImage: url("../bg-light.jpg");
 }
 
 /*=============== VARIABLES DARK THEME ===============*/
 [data-theme="dark"] {
-  --bg-primary-color: rgb(18, 18, 18);
+  --bg-primary-color: #2b2621;
   --bg-accent-color: var(--accent-color);
-  --font-color: whitesmoke;
+  --font-primary-color: whitesmoke;
+  --font-secondary-color: #2b2621;
+  --icon-color: #2b2621;
   --shadow-color: rgb(0, 0, 0);
-  --accent-color: rgb(204, 171, 228);
+  --accent-color: #7eabae;
   --accent-color2: whitesmoke;
   --alpha: 0.5;
   --urlImage: url("../bg-dark.jpg");
@@ -37,23 +42,21 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: var(--bg-primary-color);
   font-family: "Nunito Sans", sans-serif;
   color: var(--font-color);
   scroll-behavior: smooth;
 }
+
 h1,
 h2,
 p,
-span , a{
+a {
   background-color: transparent;
 }
 
 /*=============== LINK STYLES ===============*/
 li {
   list-style: none;
-  text-shadow: rgba(0, 0, 0, 0.19) 0px 0px 0.5px,
-    rgba(0, 0, 0, 0.23) 0px 1px 1px;
 }
 .link {
   text-transform: uppercase;
@@ -106,7 +109,7 @@ section {
   align-items: center;
   flex-direction: column;
 }
-section:nth-child(even) {
+/* section:nth-child(even) {
   background: var(--urlImage) no-repeat;
   background-size: cover;
   transition: opacity 1s ease-out;
@@ -115,22 +118,21 @@ section:nth-child(even)::after {
   display: none;
   content: var(--urlImage);
   transition: opacity 1s ease-out;
-}
+} */
 
-section:nth-child(odd) {
+section:nth-child(even) {
   background: var(--bg-primary-color);
+  color: var(--font-primary-color);
+}
+section:nth-child(odd) {
+  background: var(--bg-accent-color);
+  color: var(--font-secondary-color);
 }
 
-span {
-  background: linear-gradient(45deg, var(--accent-color), var(--accent-color2)); /* Adjust the colors as needed */
+.accent-span {
+  background: linear-gradient(45deg, var(--accent-color), var(--accent-color2));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
- 
-}
-
-footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-weight: 900;
 }

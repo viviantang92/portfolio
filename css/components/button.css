@@ -1,22 +1,64 @@
 @import "../style.css";
 
+/* Button Styles */
 button {
-  cursor: pointer;
-  border-radius: 1rem;
-  border: 0;
+  display: inline-flex;
+  text-decoration: none;
+  border: none;
+  font-size: 16px;
   padding: 1rem;
-  background: linear-gradient(45deg, var(--accent-color), var(--font-color));
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 0 8px;
+  background: linear-gradient(45deg, var(--accent-color), var(--accent-color2));
+  border-radius: 1rem;
+  overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-  transition: 0.5s linear;
-  font-size: 18px;
-
-  animation: fromRight;
+  cursor: pointer;
+  color: var(--icon-color);
+  animation: fromRight ease;
   animation-duration: 5s;
   animation-delay: 0s;
 }
 
+/* Button Before Pseudo-element */
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  transition: transform 0.3s ease-in;
+}
+
+/* Button Hover Effect */
 button:hover {
   background: linear-gradient(45deg, transparent, transparent);
+  color: var(--font-primary-color);
+}
+
+/* Button Hover Pseudo-element Transformation */
+button:hover::before {
+  transform: scale(0);
+}
+
+/* Button Icon Styles */
+button i {
+  transition: 0.3s ease-in;
+  background: transparent;
+  color: var(--icon-color);
+}
+
+/* Button Icon Hover Effect */
+button:hover i {
+  background: linear-gradient(45deg, var(--accent-color), var(--accent-color2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: scale(2);
 }
 
 @keyframes fromRight {

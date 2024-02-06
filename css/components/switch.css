@@ -43,7 +43,7 @@
   border-radius: 20px;
   top: 50%;
   transform: translateY(-50%);
-  background: linear-gradient(40deg, var(--accent-color), #f3e3d0 70%);
+  background: linear-gradient(40deg, var(--accent-color), #d0e7f3 70%);
   transition: 0.4s;
 }
 
@@ -54,6 +54,6 @@ input:checked + .slider {
 input:checked + .slider:before {
   left: calc(100% - (var(--size-of-icon)));
   background: var(--bg-primary-color);
-  box-shadow: inset -3px -2px 5px -2px #f3e3d0,
+  box-shadow: inset -3px -2px 5px -2px #d0e7f3,
     inset -10px -4px 0 0 var(--accent-color);
 }

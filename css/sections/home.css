@@ -18,56 +18,8 @@
   animation-delay: 0s;
 }
 
-.social-buttons {
-  background-color: transparent;
-}
-
-.social-button {
-  display: inline-flex;
-  text-decoration: none;
-  font-size: 16px;
-  padding: 1rem;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  margin: 0 8px;
-  background: linear-gradient(45deg, var(--accent-color), var(--accent-color2));
-  border-radius: 25%;
-  overflow: hidden; /* Added to clip the ::before pseudo-element */
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-
-}
-
-.social-button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-  transition: transform 0.3s ease-in;
-}
-
-.social-button:hover::before {
-  transform: scale(0);
-}
-
-.social-button i {
-  transition: 0.3s ease-in;
-  background: transparent;
-}
-
-.social-button:hover i {
-  background: linear-gradient(45deg, var(--accent-color), var(--accent-color2));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transform: scale(2);
-}
-
-.social-button:hover {
-  background: linear-gradient(45deg, transparent, transparent);
+.social-buttons{
+  margin: 2rem;
 }
 
 @keyframes fromLeft {
